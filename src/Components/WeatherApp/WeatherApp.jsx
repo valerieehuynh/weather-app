@@ -16,6 +16,10 @@ const WeatherApp = () => {
 
   const [wicon, setWicon] = useState(cloud_icon);
 
+  function submit(cityName) {
+    
+  }
+
   const search = async () => {
     const element =document.getElementsByClassName("cityInput")
     if(element[0].value==="")
@@ -68,20 +72,20 @@ const WeatherApp = () => {
     <div className='container'>
       <div className='top-bar'>
         <input type="text" className="cityInput" placeholder='Search' />
-        <div className='search-icon' onClick={()=>{search()}}>
+        <div className='search-icon' onClick={()=>{search()}} onSubmit={()=>{submit()}}>
           <img src={search_icon} alt="" className='search-png'/>
         </div>
       </div>
       <div className="weather-image">
         <img src={cloud_icon} alt="" />
       </div>
-      <div className="weather-temp">24° C</div>
-      <div className="weather-location">London</div>
+      <div className="weather-temp">--</div>
+      <div className="weather-location">--</div>
       <div className="data-container">
         <div className="element">
           <img src={humidity_icon} alt="" className="icon" />
           <div className="data">
-            <div className="humidity-percent">64%</div>
+            <div className="humidity-percent">--%</div>
             <div className="text">Humidity</div>
         
           </div>
@@ -89,7 +93,7 @@ const WeatherApp = () => {
         <div className="element">
           <img src={wind_icon} alt="" className="icon" />
           <div className="data">
-            <div className="wind-rate">18 km/hr</div>
+            <div className="wind-rate">-- km/hr</div>
             <div className="text">Wind Speed</div>
         
           </div>
