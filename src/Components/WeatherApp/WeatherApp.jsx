@@ -10,9 +10,11 @@ import wind_icon from '../Assets/wind.png';
 import humidity_icon from '../Assets/humidity.png';
 
 
+
+
 const WeatherApp = () => {
 
-  let api_key = "6e7df5599dcb7db50905c2cf48dbe8f3";
+  let api_key = process.env.REACT_APP_SECRET;
 
   const [wicon, setWicon] = useState(cloud_icon);
 
@@ -95,7 +97,7 @@ const WeatherApp = () => {
           <div className="data">
             <div className="wind-rate">-- km/hr</div>
             <div className="text">Wind Speed</div>
-        
+         
           </div>
         </div>
       </div>
